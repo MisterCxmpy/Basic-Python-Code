@@ -1,4 +1,4 @@
-#Basic Password Gen Made With Python
+# Basic Password Gen Made With Python
 
 import random
 import sys
