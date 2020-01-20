@@ -1,10 +1,10 @@
-#Basic Password Gen Made With Python
+# Password Generator V2
 from os import system, name
 import random
 import time
 import os
 
-char = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!£$%^&*"
+char = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!£$%^&*"      #   List of all the characters used to generate the passwords
 
 f = 'password.txt'
 file = open("password.txt", "a")
@@ -42,7 +42,7 @@ def create_Password():
     password = ""
     for l in range(password_length):
         password += random.choice(char)
-    currentDirectory = os.getcwd()
+    currentDirectory = os.getcwd()                          #   This gets the directory of the user
     print("Your password has been saved under", currentDirectory, "- password.txt")
     file = open("password.txt", "a")
     file.write(password + ' | ' + site)
@@ -84,7 +84,7 @@ def clear_Passwords():
     options()
 
 
-def clear():
+def clear():                        #   This function is made to clear the Python terminal
     if name == 'nt':
         _ = system('cls')
 
