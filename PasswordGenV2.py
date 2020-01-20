@@ -3,8 +3,30 @@ from os import system, name
 import random
 import time
 import os
+import getpass
 
-char = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!£$%^&*"
+char = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!£$%^&*"          # The character list used to generate the password
+
+def masterPass():
+
+    counter = 1
+    masterPassword = getpass.getpass(prompt="Please enter the master password: ")       # GetPass has been used to prevent the password from showing
+    while True:
+        if counter == 3:
+            print("Locked out")
+            exit()
+        elif masterPassword == "Password":
+            time.sleep(1)
+            print("Password successfully entered!")
+            time.sleep(2)
+            clear()
+            options()
+            break
+        else:
+            masterPassword = input("Wrong password, try again: ")
+            time.sleep(0.5)
+        counter += 1
+
 
 f = 'password.txt'
 file = open("password.txt", "a")
@@ -99,5 +121,4 @@ def clear():
     if name == 'nt':
         _ = system('cls')
 
-clear()
-options()
+masterPass()
