@@ -1,4 +1,5 @@
 #Basic Password Gen Made With Python
+#Password is "Password"
 from os import system, name
 import random
 import time
